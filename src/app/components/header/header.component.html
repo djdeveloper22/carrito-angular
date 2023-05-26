@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img class="navbar-logo__img" src="./assets/img/logo.png" alt="logo empresa">
+    <div class="navbar-title">Bank Inc</div>
+  </div>
+  <div class="navbar-cart" (click)="toggleCart()">
+    <div class="navbar-cart-items" *ngIf="(myCart$ | async)?.length">
+      <p>{{ (myCart$ | async)?.length }}</p>
+    </div>
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
+</nav>
+<div class="cart" [ngClass]="{show:viewProductCart}">
+  <app-carrito></app-carrito>
+</div>
