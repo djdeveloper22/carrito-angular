@@ -10,6 +10,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 
 import {HttpClientModule} from '@angular/common/http'
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CategoryComponent } from './components/category/category.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     MainComponent,
     ProductComponent,
     CarritoComponent,
-    CarouselComponent
+    CarouselComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

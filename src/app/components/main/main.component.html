@@ -6,6 +6,44 @@
     <h2 class="container-title_title">Nuestros Productos</h2>
   </div>
   <div class="container-products">
-    <app-product></app-product>
+    <!-- <div class="container-items-categorie">
+      <div class="content__options__search">
+        <div class="content__options__search__component">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Busqueda por titulo" (keydown)="getProductsByTitle()" [(ngModel)]="search">
+        </div>
+    </div>
+      <p>Categorias</p>
+      <app-category *ngFor="let cat of categories" [img]="cat.image" [text]="cat.name"></app-category>
+    </div>
+    <div class="container-items-product">
+      <div class="container-items-product__grid">
+        <app-product *ngFor="let item of products" [products]="item" [images]="item.images" [title]="item.title" [price]="item.price"></app-product>
+      </div>
+      <div class="content__products__loadmore" (click)="getMoreProduct()">
+        Cargar mas productos
+      </div>
+    </div> -->
+
+    <div class="container-items-categorie">
+      <div class="content__options__search">
+        <div class="content__options__search__component">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Busqueda por titulo" (keydown)="getProductsByTitle()" [(ngModel)]="search">
+        </div>
+      </div>
+      <p>Categorias</p>
+      <app-category *ngFor="let cat of categories" [img]="cat.image" [text]="cat.name"></app-category>
+    </div>
+
+    <div class="container-items-product">
+      <div class="container-items-product__grid">
+        <app-product *ngFor="let item of products" [products]="item" [images]="item.images" [title]="item.title" [price]="item.price"></app-product>
+        <div class="content__products__loadmore" (click)="getMoreProduct()">
+          Cargar mas productos
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

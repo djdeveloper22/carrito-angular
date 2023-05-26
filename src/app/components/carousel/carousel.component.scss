@@ -1,18 +1,11 @@
 .carousel {
-  display: grid;
-  height: 70vh;
-  overflow: hidden;
-  place-content: center;
   width: 100%;
+  margin-bottom: 1rem;
+}
 
-  &__img {
-    margin-top: 8rem;
-    object-fit: cover;
-    transition: opacity 0.5s;
-    width: 100%;
-
-    img{
-      max-width: 100%;
-    }
-  }
+.carousel img {
+  width: 100%;
+  transition: opacity 0.5s;
+  height: 60vh;
+  object-fit: cover;
 }

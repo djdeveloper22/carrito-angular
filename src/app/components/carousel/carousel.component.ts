@@ -17,7 +17,6 @@ export class CarouselComponent {
 
   ngOnInit(): void {
     this.getProducts();
-
   }
 
   async getProducts() {

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../interface/product.interface';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Category } from '../interface/category.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,14 @@ export class StoreService {
 
   public async getProductsPagination(index: number, limit: number): Promise<Product[]> {
     return await this.http.get<any>(`${this.URL}products?offset=${index}&limit=${limit}`).toPromise();
+  }
+
+  public async getCateogries(): Promise<Category[]> {
+    return await this.http.get<any>(`${this.URL}categories`).toPromise();
+  }
+
+  public async getProductByTitle(title: string): Promise<Product[]> {
+    return await this.http.get<any>(`${this.URL}products/?title=${title}`).toPromise();
   }
 
   insertProduct(product: Product): void {

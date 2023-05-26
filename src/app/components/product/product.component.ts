@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/interface/product.interface';
 import { StoreService } from 'src/app/service/store.service';
 
@@ -7,9 +7,12 @@ import { StoreService } from 'src/app/service/store.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
-
-  products: Product[] = [];
+export class ProductComponent {
+  @Input() products: any;
+  product: Product[] = [];
+  @Input() images: string[] = [];
+  @Input() price: number = 0;
+  @Input() title: string = "";
 
   constructor(private storeService: StoreService) { }
 
@@ -19,12 +22,12 @@ export class ProductComponent implements OnInit {
 
   getProducts(): void{
     this.storeService.getAllProducts().subscribe(response =>{
-      return this.products = response;
+      return this.product = response;
     })
   }
 
   saveProduct(product: Product): void{
-    return this.storeService.insertProduct(product);
+    this.storeService.insertProduct(product);
+    console.log(product);
   }
-
 }

@@ -1,14 +1,13 @@
-<article class="product" *ngFor="let product of products; let i=index">
+<article class="product">
   <div class="product-header">
-    <h3 class="product-header-title">{{ product.title }}</h3>
-    <p>$ {{ product.price }}</p>
+    <h3 class="product-header-title">{{ title | uppercase }}</h3>
+    <p>$ {{ price | currency }}</p>
   </div>
   <div class="product-body">
-    <img [src]="product.images" class="product-body__images" alt="" />
-    <p>{{ product.description }}</p>
+    <img src="{{images[0]}}" class="product-body__images" alt="producto" />
   </div>
   <div class="product-footer">
-    <button class="product-footer-button" (click)="saveProduct(product)">
+    <button class="product-footer-button" (click)="saveProduct(products)">
       <i class="fa-solid fa-basket-shopping"></i>
     </button>
   </div>

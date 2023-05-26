@@ -1,23 +1,95 @@
-.container{
+@import 'src/assets/styles/_variables.scss';
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
   width: 100vw;
   position: relative;
-  background-color: white;
+  background-color: $color-light;
 
-  .container-carousel{
+  .container-carousel {
     width: 100%;
   }
-  &-title{
-      margin-bottom: 1.5rem;
+
+  &-title {
+    margin-bottom: 1.5rem;
   }
-  &-products{
-     app-product{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-     }
+
+  &-products {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+
+    .content__products__loadmore {
+      width: 100%;
+      height: 50px;
+      background-color: $primary-color;
+      color: $color-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0px;
+      cursor: pointer;
+    }
   }
 }
+
+.container-items-product__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  height: auto;
+}
+
+.container-items-categorie {
+  padding: 0px 15px;
+  width: 20%;
+
+  .content__options__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__component {
+      position: relative;
+      width: 100%;
+      border: 1px solid $color-light;
+      border-radius: 5px;
+      padding: 15px 0px;
+      margin: 10px 0px;
+
+      i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      input {
+        width: 85%;
+        height: 100%;
+        border: none;
+        padding-left: 30px; // Debe ser más grande que el ancho del ícono de búsqueda para evitar la superposición
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      i.fa-times {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.container-items-categorie{
+  width: 28%;
+}
+
