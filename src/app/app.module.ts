@@ -12,8 +12,9 @@ import {HttpClientModule} from '@angular/common/http'
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CategoryComponent } from './components/category/category.component';
 import { FormsModule } from '@angular/forms';
-import { AlertService } from './service/alert.service';
-
+import { ExportFileService } from './service/exportFile.service';
+import {} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +29,10 @@ import { AlertService } from './service/alert.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [AlertService],
+  providers: [ExportFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
