@@ -8,7 +8,10 @@
   </div>
   <div class="product-footer">
     <button class="product-footer-button" (click)="saveProduct(products)">
-      <i class="fa-solid fa-basket-shopping"></i>
+      Agregar <i class="fa-solid fa-basket-shopping"></i>
     </button>
+    <div class="msgAddProduct" *ngIf="notification">
+      producto agregado
+    </div>
   </div>
 </article>

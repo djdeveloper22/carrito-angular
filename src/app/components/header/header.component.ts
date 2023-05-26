@@ -13,12 +13,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(private storeService: StoreService) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   toggleCart(): void {
     this.viewProductCart = !this.viewProductCart;
   }
-
 }

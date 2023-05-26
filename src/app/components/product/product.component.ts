@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/interface/product.interface';
 import { StoreService } from 'src/app/service/store.service';
 
@@ -13,8 +13,12 @@ export class ProductComponent {
   @Input() images: string[] = [];
   @Input() price: number = 0;
   @Input() title: string = "";
+  notification: boolean = false;
 
-  constructor(private storeService: StoreService) { }
+  constructor(
+    private storeService: StoreService
+  )
+  { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -28,6 +32,13 @@ export class ProductComponent {
 
   saveProduct(product: Product): void{
     this.storeService.insertProduct(product);
-    console.log(product);
+    this.showAlert();
+  }
+
+  showAlert(): void {
+    this.notification = true;
+    setTimeout(() => {
+      this.notification = false;
+    }, 3000);
   }
 }

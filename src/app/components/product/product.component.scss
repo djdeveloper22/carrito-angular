@@ -1,3 +1,5 @@
+@import 'src/assets/styles/_variables.scss';
+
 .product {
   align-items: center;
   text-align: center;
@@ -9,7 +11,7 @@
   flex-direction: column;
   margin: 0.5rem;
   padding: 1rem;
-  
+
   &-header {
     flex-basis: 30%;
 
@@ -38,17 +40,18 @@
       cursor: pointer;
       border: none;
       border-radius: 0.25rem;
-      background-color: #cc1414;
-      color: white;
+      background-color: $secundary-color;
+      color: $color-light;
       padding: 0.5rem;
       width: 8rem;
-      height: 3rem;
+      height: 2rem;
     }
 
     &-button:hover {
-      color: #cc1414;
-      background-color: white;
-      border: 1px solid #cc1414;
+      color: $color-light;
+      background-color: $primary-color;
+      border: 1px solid $warning-color;
+      transition: 0.5s all ease;
     }
   }
 }
@@ -56,3 +59,14 @@
 .product:hover {
   scale: (1.05)
 }
+
+.msgAddProduct{
+  background-color: $danger-color;
+  color: $color-light;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 10rem;
+  transition: 50s all ease;
+}
+

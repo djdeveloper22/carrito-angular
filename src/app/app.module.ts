@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CategoryComponent } from './components/category/category.component';
 import { FormsModule } from '@angular/forms';
+import { AlertService } from './service/alert.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,7 +19,8 @@
 
   &-products {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     gap: 0.5rem;
     width: 100%;
 
@@ -49,9 +50,7 @@
   width: 20%;
 
   .content__options__search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 
     &__component {
       position: relative;
@@ -63,17 +62,18 @@
 
       i {
         position: absolute;
-        left: 10px;
+        right: 90px;
         top: 50%;
         transform: translateY(-50%);
       }
 
       input {
-        width: 85%;
-        height: 100%;
+        border-radius: 0.3rem;
         border: none;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        height: 4rem;
         padding-left: 30px; // Debe ser más grande que el ancho del ícono de búsqueda para evitar la superposición
-
+        width: 85%;
         &:focus {
           outline: none;
         }
@@ -90,6 +90,19 @@
 }
 
 .container-items-categorie{
-  width: 28%;
+  width: auto;
+}
+
+.pruebaCategorie{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  width: auto;
+  font-size: 0.8rem;
+
+  app-category{
+    width: auto;
+  }
 }
 

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../interface/product.interface';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Category } from '../interface/category.interface';
 
 @Injectable({
@@ -38,7 +38,6 @@ export class StoreService {
       product.cantidad = 1;
       this.listProduct.push(product);
       this.cart.next(this.listProduct);
-
     } else {
       const productMod = this.listProduct.find((element) => {
         return element.id === product.id
